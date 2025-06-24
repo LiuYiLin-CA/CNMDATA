@@ -40,8 +40,8 @@ def compress_and_clean_pull_directory():
             if item == exclude_file:
                 continue
 
-            # 跳过即将创建的压缩文件本身
-            if item == zip_filename:
+            # 跳过所有zip文件
+            if item.lower().endswith('.zip'):
                 continue
 
             if os.path.isfile(item_path):
